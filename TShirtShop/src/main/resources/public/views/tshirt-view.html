@@ -1,0 +1,23 @@
+<div class="container pad-top">
+  <table class="table tshirttable">
+      <tr>
+          <td><h3>Details for {{tshirt.name}}</h3></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Name</td>
+          <td>{{tshirt.name}}</td>
+      </tr>
+      <tr>
+          <td>Size</td>
+          <td>{{tshirt.size}}</td>
+      </tr>
+      <tr>
+          <td>Colour</td>
+          <td>{{tshirt.colour}}</td>
+      </tr>
+  </table>
+  <div>
+      <a class="btn btn-primary" ui-sref="editTshirt({id:tshirt.id})">Edit</a>
+  </div>
+</div>
