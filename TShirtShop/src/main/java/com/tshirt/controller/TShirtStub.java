@@ -11,7 +11,6 @@ public class TShirtStub {
 	public TShirtStub(){}
 	
 	private static List<TShirt> tshirtList;
-	//private static Long idIndex = 3L;
 	
 	
 	static{
@@ -47,13 +46,11 @@ public class TShirtStub {
 		}return null;
 		
 	}
-	
+		
 	public static TShirt update(Long id, TShirt tshirt){
 		Integer index = (int) (long) id;
-		//tshirtList.get(index - 1).set;
 		tshirtList.set(index -1, tshirt);
-		return tshirtList.get(index-1); 
-		
+		return tshirtList.get(index - 1); 		
 	}
 	
 	public static TShirt delete(Long id){

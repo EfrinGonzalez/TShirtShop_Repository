@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import com.tshirt.controller.HomeController;
 
-public class AppTest {
+public class HomeControllerTest {
 
 	@Test
 	public void entryPointTest() {
