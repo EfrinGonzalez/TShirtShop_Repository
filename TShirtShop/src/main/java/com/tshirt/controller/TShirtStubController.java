@@ -12,7 +12,7 @@ import com.tshirt.model.TShirt;
 
 @RestController
 @RequestMapping("api/shop/")
-public class TShirtController {
+public class TShirtStubController {
 
 	@RequestMapping(value="tshirts", method = RequestMethod.GET)
 	public List<TShirt> listAll(){
@@ -23,30 +23,22 @@ public class TShirtController {
 	public TShirt get(@PathVariable Long id) {
 		return TShirtStub.getOne(id);
 	}
-	/*@RequestMapping(value = "tshirts", method = RequestMethod.POST)
-	public Shipwreck create(@RequestBody Shipwreck shipwreck) {
-		return shipwreckRepository.saveAndFlush(shipwreck);
+	@RequestMapping(value = "tshirts", method = RequestMethod.POST)
+	public TShirt create(@RequestBody TShirt tshirt) {
+		return TShirtStub.create(tshirt);
 	}
-
-	@RequestMapping(value = "tshirts/{id}", method = RequestMethod.GET)
-	public Shipwreck get(@PathVariable Long id) {
-		return shipwreckRepository.findOne(id);
-	}
+	
 
 	@RequestMapping(value = "tshirts/{id}", method = RequestMethod.PUT)
-	public Shipwreck update(@PathVariable Long id, @RequestBody Shipwreck shipwreck) {
-		Shipwreck existingShipwreck = shipwreckRepository.findOne(id);
-		BeanUtils.copyProperties(shipwreck, existingShipwreck);
-		return shipwreckRepository.saveAndFlush(existingShipwreck);
+	public TShirt update(@PathVariable Long id, @RequestBody TShirt tshirt) {
+		return TShirtStub.update(id, tshirt);
+	}
+	
+	@RequestMapping(value = "tshirts/{id}", method = RequestMethod.DELETE)
+	public TShirt delete(@PathVariable Long id) {
+		return TShirtStub.delete(id);
 	}
 
-	@RequestMapping(value = "tshirts/{id}", method = RequestMethod.DELETE)
-	public Shipwreck delete(@PathVariable Long id) {
-		Shipwreck existingShipwreck = shipwreckRepository.findOne(id);
-		shipwreckRepository.delete(existingShipwreck);
-		return existingShipwreck;
-	}
-*/
 	
 }
 

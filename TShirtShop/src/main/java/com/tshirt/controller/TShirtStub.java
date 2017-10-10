@@ -10,7 +10,8 @@ public class TShirtStub {
 	
 	public TShirtStub(){}
 	
-	static List<TShirt> tshirtList;
+	private static List<TShirt> tshirtList;
+	//private static Long idIndex = 3L;
 	
 	
 	static{
@@ -31,13 +32,34 @@ public class TShirtStub {
 		return tshirtList;
 	}
 	
+	
+	
+	public static TShirt create(TShirt tshirt){
+		tshirt.setId(tshirtList.size()+1L);
+		tshirtList.add(tshirt);
+		return tshirt;		
+	}
+	
 	public static TShirt getOne(Long id){
 		Integer index = (int) (long) id;
 		if (index >= 1){
 			return tshirtList.get(index-1);//-1 due to index starts from cero in List
 		}return null;
 		
-		}
+	}
 	
+	public static TShirt update(Long id, TShirt tshirt){
+		Integer index = (int) (long) id;
+		//tshirtList.get(index - 1).set;
+		tshirtList.set(index -1, tshirt);
+		return tshirtList.get(index-1); 
+		
+	}
+	
+	public static TShirt delete(Long id){
+		Integer index = (int) (long) id;
+		return tshirtList.remove(index - 1);
+		
+	}
 
 }
