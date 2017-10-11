@@ -1,13 +1,21 @@
 package com.tshirt.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class TShirt {
 
 public static enum Colour{WHITE, BLACK, YELLOW, GREEN, BLUE};
-	
+
+@Id
+@GeneratedValue(strategy= GenerationType.AUTO)
 Long id;
 String name;
 String size;
-Colour colour;//This can be an enum type
+Colour colour;
 Double price;
 String image;
 public TShirt(){};
