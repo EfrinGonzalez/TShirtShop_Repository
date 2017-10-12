@@ -1,4 +1,4 @@
-package com.employees.control;
+package com.tshirt.test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
@@ -15,7 +15,7 @@ import com.tshirt.controller.TShirtStubController;
 import com.tshirt.model.TShirt;
 import com.tshirt.model.TShirt.Colour;
 
-public class StubControllerTest {
+public class TShirtStubControllerTest {
 
 	private TShirtStubController stubCont;
 	private static List<TShirt> tshirtList;
