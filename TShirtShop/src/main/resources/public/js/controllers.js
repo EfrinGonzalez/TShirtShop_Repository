@@ -1,6 +1,6 @@
 angular.module('app.controllers', []).controller('TshirtListController', function($scope, $state, popupService, $window, Tshirt) {
   $scope.tshirts = Tshirt.query(); //fetch all tshirts. Issues a GET to /api/shop/tshirts
-
+  
   $scope.deleteTshirt = function(tshirt) { // Delete a Tshirt. Issues a DELETE to /api/shop/tshirts/:id
     if (popupService.showPopup('Really delete this?')) {
       tshirt.$delete(function() {
@@ -14,7 +14,7 @@ angular.module('app.controllers', []).controller('TshirtListController', functio
 }).controller('TshirtCreateController', function($scope, $state, $stateParams, Tshirt) {
   $scope.tshirt = new Tshirt();  //create new tshirt instance. Properties will be set via ng-model on UI
 
-  $scope.addTshirt = function() { //create a new shipwreck. Issues a POST to /api/shop/tshirts
+  $scope.addTshirt = function() { //create a new tshirt. Issues a POST to /api/shop/tshirts
     $scope.tshirt.$save(function() {
       $state.go('tshirts'); // on success go back to the list i.e. tshirts state.
     });
