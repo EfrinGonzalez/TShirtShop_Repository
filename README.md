@@ -35,3 +35,23 @@ Post - Create: http://localhost:8080/api/shop/tshirts
 PUT - update  one: http://localhost:8080/api/shop/tshirts/{id}
 (receives id an a TShirt object)
 DELETE-delete one: http://localhost:8080/api/shop/tshirts/{id}
+
+
+
+Curl operations to test the API
+----------------------------------------------------------------------------------------------
+Get All
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET  http://localhost:8080/api/shop/tshirts
+----------------------------------------------------------------------------------------------
+Get one
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET  http://localhost:8080/api/shop/tshirts/1
+----------------------------------------------------------------------------------------------
+Create
+curl -H "Content-Type: application/json" -X POST -d "{"""name""":"""NBA""","""size""":"""M""","""colour""":"""BLACK""","""price""":"""34.00""","""image""":"""images/nba.jpg""" }" http://localhost:8080/api/shop/tshirts
+----------------------------------------------------------------------------------------------
+Update
+curl -i -X PUT -H "Content-Type: application/json" -d "{"""id""":"""35""","""name""":"""NBA""","""size""":"""L""","""colour""":"""BLACK""","""price""":"""33.00""","""image""":"""images/nba.jpg""" }"  http://localhost:8080/api/shop/tshirts/35
+----------------------------------------------------------------------------------------------
+Delete
+$ curl -i -X DELETE http://localhost:8080/api/shop/tshirts/34
+
