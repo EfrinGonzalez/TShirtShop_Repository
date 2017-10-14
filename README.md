@@ -51,7 +51,8 @@ curl -H "Content-Type: application/json" -X POST -d "{"""name""":"""NBA""","""si
 ----------------------------------------------------------------------------------------------
 Update
 curl -i -X PUT -H "Content-Type: application/json" -d "{"""id""":"""35""","""name""":"""NBA""","""size""":"""L""","""colour""":"""BLACK""","""price""":"""33.00""","""image""":"""images/nba.jpg""" }"  http://localhost:8080/api/shop/tshirts/35
-----------------------------------------------------------------------------------------------
+----------------------------------------------------------------
 Delete
-$ curl -i -X DELETE http://localhost:8080/api/shop/tshirts/34
+curl -i -X DELETE http://localhost:8080/api/shop/tshirts/34
+-----------------------------------------------
 
