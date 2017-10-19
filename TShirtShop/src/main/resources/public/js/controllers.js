@@ -1,6 +1,10 @@
 angular.module('app.controllers', []).controller('TshirtListController', function($scope, $state, popupService, $window, Tshirt) {
   $scope.tshirts = Tshirt.query(); //fetch all tshirts. Issues a GET to /api/shop/tshirts
   
+  $scope.sortType = 'name'; // set the default sort type
+  $scope.sortReverse  = false;  // set the default sort order
+  //$scope.searchTShirt   = '';     // set the default search/filter term
+  
   $scope.deleteTshirt = function(tshirt) { // Delete a Tshirt. Issues a DELETE to /api/shop/tshirts/:id
     if (popupService.showPopup('Really delete this?')) {
       tshirt.$delete(function() {

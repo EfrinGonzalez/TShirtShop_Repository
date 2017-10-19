@@ -1,14 +1,14 @@
 <div class="form-group">
 	<label for="name" class="col-sm-2 control-label">Name</label>
 	<div class="col-sm-10">
-		<input type="text" ng-model="tshirt.name" class="form-control"
+		<input type="text" ng-model="tshirt.name" required class="form-control"
 			id="name" placeholder="Tshirt Name" />
 	</div>
 </div>
 <div class="form-group">
 	<label for="size" class="col-sm-2 control-label">Size</label>
 	<div class="col-sm-10">
-		<input type="text" ng-model="tshirt.size" class="form-control"
+		<input type="text" ng-model="tshirt.size" required class="form-control"
 			id="size" placeholder="Tshirt Size" />
 	</div>
 </div>
@@ -16,7 +16,7 @@
 <div class="form-group">
 	<label for="colour" class="col-sm-2 control-label">Colour</label>
 	<div class="col-sm-10">
-		<select ng-model="tshirt.colour" class="form-control" id="colour"
+		<select ng-model="tshirt.colour" required class="form-control" id="colour"
 			placeholder="Tshirt Colour">
 			<option value="" hidden style="color:blue;">Tshirt Colour</option>
 			<option value="WHITE">WHITE</option>
@@ -32,16 +32,25 @@
 <div class="form-group">
 	<label for="price" class="col-sm-2 control-label">Price</label>
 	<div class="col-sm-10">
-		<input type="text" ng-model="tshirt.price" class="form-control"
+		<input type="text" ng-model="tshirt.price" required class="form-control"
 			id="price" placeholder="Tshirt Price" />
 	</div>
 </div>
 <div class="form-group">
-	<label for="image" class="col-sm-2 control-label">Image</label>
+	<label for="image" class="col-sm-2 control-label">Image Path</label>
 	<div class="col-sm-10">
-		<input type="text" ng-model="tshirt.image" class="form-control"
-			id="image" placeholder="Tshirt Image" />
+		<input type="text" ng-model="tshirt.image" required class="form-control"
+			id="image" placeholder="/images/file_name.jpg" />
 	</div>
+	
+</div>
+<div class="form-group">
+	<label for="image" class="col-sm-2 control-label">TShirt Image</label>
+	<div class="col-sm-10">
+	<!-- Two way binding image to reflect what is chosen -->			
+			<img ng-src= "{{tshirt.image}}" scr="" style="height:100px;width:100px;"/>
+	</div>
+	
 </div>
 <div class="form-group">
 	<div class="col-sm-offset-2 col-sm-10">

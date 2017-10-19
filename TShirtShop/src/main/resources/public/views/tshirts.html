@@ -1,11 +1,44 @@
 <div class="container pad-top">
+
+
+
   <a ui-sref="newTshirt" class="btn-primary btn-lg nodecoration">Add New T-Shirt</a>
+  </br></br></br>
+  Your are sorting by: {{ sortType }}  
+  </br>
   <table class="table tshirttable">
       <tr>
           <td><h3>All T-Shirts</h3></td>
           <td></td>
       </tr>
-      <tr ng-repeat="tshirt in tshirts">
+    
+		<div>
+		
+		<tr>
+<!-- Check source code example for table sorting at: https://scotch.io/tutorials/sort-and-filter-a-table-using-angular -->
+			<td><a href="#/tshirts" ng-click="sortType = 'id'"> <span
+					ng-show="sortType == 'id'" class="fa fa-caret-down"></span> Id
+			</a></td>
+			<td><a href="#/tshirts" ng-click="sortType = 'name'"> <span
+					ng-show="sortType == 'name'" class="fa fa-caret-down"></span> Name
+			</a></td>
+			<td><a href="#/tshirts" ng-click="sortType = 'size'"> <span
+					ng-show="sortType == 'size'" class="fa fa-caret-down"></span> Size
+			</a></td>
+			<td><a href="#/tshirts" ng-click="sortType = 'colour'"> <span
+					ng-show="sortType == 'colour'" class="fa fa-caret-down"></span> Colour
+			</a></td>
+			<td><a href="#/tshirts" ng-click="sortType = 'price'"> <span
+					ng-show="sortType == 'price'" class="fa fa-caret-down"></span> Price
+			</a></td>
+
+			<td>Image Path</td>
+			<td>Image</td>
+			<td>Functions</td>
+		</tr>
+		</div>
+
+		<tr ng-repeat="tshirt in tshirts | orderBy:sortType:sortReverse">
           <td>{{tshirt.id}}</td>
           <td>{{tshirt.name}}</td>
           <td>{{tshirt.size}}</td>
