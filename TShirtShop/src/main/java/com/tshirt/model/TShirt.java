@@ -1,6 +1,8 @@
 package com.tshirt.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -8,7 +10,8 @@ import javax.persistence.Id;
 @Entity
 public class TShirt {
 
-	public static enum Colour {
+	
+	public  enum Colour {
 		WHITE, BLACK, YELLOW, GREEN, BLUE
 	};
 
@@ -17,6 +20,7 @@ public class TShirt {
 	Long id;
 	String name;
 	String size;
+	@Enumerated(EnumType.STRING)	
 	Colour colour;
 	Double price;
 	String image;
